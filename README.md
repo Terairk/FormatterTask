@@ -2,7 +2,12 @@
 
 ## Project Description
 This is my submission for the "**A basic parser and a formatter for F# language in Kotlin**" task for the Jetbrains Internship Application
-You may need to install the Kotest plugin if you're using IntelliJ IDEA to run the tests. (Although I think it should work without it) 
+
+
+# Setup 
+You may need to install the Kotest plugin if you're using IntelliJ IDEA to run the tests. (Although I think it should work without it)
+You may need to reload gradle changes in build.gradle.kts (but should be done automatically). I didn't make a main application but the tests should be able
+to showcase them off.
 
 ## Some Sidenotes
 I didn't quite fully understand the assignment. The way I ended up doing it in the end (along with my testing) is that you specify ranges
