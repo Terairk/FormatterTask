@@ -1,28 +1,40 @@
 # Formatter Task
 
 ## Project Description
-This is my submission for the "**A basic parser and a formatter for F# language in Kotlin**" task for the Jetbrains Internship Application.
+This is my submission for the "**A basic parser and a formatter for F# language in Kotlin**" task for the Jetbrains Internship Application
+
+## Some Sidenotes
+I didn't quite fully understand the assignment. The way I ended up doing it in the end (along with my testing) is that you specify ranges
+from the original text to replace (only replacing whitespace characters). These whitespace changes are done lazily and are like fixed in place ie 
+The ranges you specify (to delete or insert characters) all belong to the same original text. 
+If you tried to do this without these changes: Your indexes would start being off as you're repeatedly deleting and inserting thus changing
+the ranges. So this makes the program more intuitive to use.
+
+However, I'm not fully sure about my PositionInResult. You never have to specify change yourself which is nice and intuitive to use. 
+But from a programmer's perspective: It makes it quite weird to reason about it. I also had to include another offset in addition to position.
+There's probably a more efficient way to do this but I couldn't quite get the problem statement to align.
 
 ## Frameworks 
 - **Kotest**: Popular testing framework for Kotlin that supports property testing and DSL's for writing tests.
-- **Arrow**: Popular functional programming library that allows for functional error handling with nice DSL's.
+- **Detekt**: Popular library for static code analysis
+- **Arrow**: Originally planned to use Arrow but ran out of time.
 
 ## Reasoning for Framework Choices
 - **Kotest**: 
   - I've used JUnit for creating tests so I wanted to try out some Kotlin first testing frameworks
-  - Kotest supports DSL based testing which I wanted to try out (and get more comfortable to using DSL's in Kotlin)
-  - Kotest supports property based testing so I can test multiple strings easily
-  - Kotest easily supports Arrow's custom datatypes like Either<A,B>
+  - Kotest supports DSL based testing which I wanted to try out (and get more comfortable to using DSL's in Kotlin) - the syntax is also really intuitive
+  - Kotest supports property based testing so I can test multiple strings easily (Didn't end up using this)
+  - Kotest easily supports Arrow's custom datatypes like Either<A,B> (Didn't end up using Arrow in the end due to this being more difficult than I thought)
   - Wanted to broaden my horizon of using more Kotlin frameworks so I can get used to the Kotlin Ecosystem of libraries
+  - (After the project) - I realised that I really liked being able to give my tests better names/descriptions since they were a string instead of a FunctionName
+  - Allows me to use whitespace in test names
 
-- **Arrow**: 
-  - Having done Haskell in Imperial (before learning Kotlin),
-  - I like how Arrow has support for some custom datatypes and has functions that allow for something similar to the do block in Haskell
-  - I decided to read more about Arrow after that and I loved how Arrow handles Error handling and propagation.
-  - Has the benefits of having more control about the control flow about programs compared to Kotlin's unchecked exceptions
+ - ** Arrow
+  - Originally wanted to use Arrow for some error handling but couldn't due to spending too much time getting stuck
+  - Planned to use this to catch multiple errors at the same time and collect them at the end
 
 ## TLDR;
 I'm using this project as a form of testing ground so I can get more used to using 3rd party
 frameworks in my Kotlin code (as I haven't properly used Arrow before).
 
-I may implement this code using regular Exceptions with tests but for now, I'm opting to use Arrow's error handling and see how it goes.
+
