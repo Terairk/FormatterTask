@@ -13,6 +13,7 @@ class TextWithChangesTest : FunSpec({
     }
 
     test("addChange with overlapping changes completely inside") {
+        // 3 spaces are added between 'he' and 'world'
         val text = TextWithChanges("he   world")
         text.addChange(RangeInResult(PositionInResult(2), PositionInResult(5)), "  ")
         text.addChange(RangeInResult(PositionInResult(2), PositionInResult(4)), " ")
@@ -20,6 +21,7 @@ class TextWithChangesTest : FunSpec({
     }
 
     test("addChange with adjacent changes") {
+        // 6 spaces are added between 'hello' and 'world'
         val text = TextWithChanges("hello      world")
         text.addChange(RangeInResult(PositionInResult(5), PositionInResult(7)), " ")
         text.addChange(RangeInResult(PositionInResult(7), PositionInResult(11)), "")
@@ -61,6 +63,8 @@ class TextWithChangesTest : FunSpec({
         val beforeFormatter = "while( true){foo( );}"
         val afterFormatter = "while (true)\n{\n    foo();\n}"
 
+        // note that i needed to type out 4 spaces instead of tabs as my solution doesn't convert
+        // tabs to spaces automatically
         val text = TextWithChanges(beforeFormatter)
         text.addChange(RangeInResult(PositionInResult(5), PositionInResult(5)), " ")
         text.addChange(RangeInResult(PositionInResult(6), PositionInResult(7)), "")
