@@ -11,6 +11,9 @@ You should also be able to do ./gradlew clean test to see verbose tests.
 
 You may need to reload gradle changes in build.gradle.kts (but should be done automatically). I didn't make a main application however the tests should be able to showcase the features off.
 
+## Usage
+Please read the comments at the top of the Main.kt file for some examples. Also you can consult the test cases if you're unsure about what indices are considered valid or not.
+
 ## Some Sidenotes
 I didn't quite understand the assignment. My program makes you specify ranges from the original text to replace (where it only replaces whitespace characters). These whitespace changes are done lazily and are fixed in place ie
 The ranges you specify (to delete or insert characters) all belong to the same original text. (Look at my tests for an example of what I mean)
