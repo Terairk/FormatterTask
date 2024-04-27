@@ -1,7 +1,7 @@
 # Formatter Task
 
 ## Project Description
-This is my submission for the "**A basic parser and a formatter for F# language in Kotlin**" task for
+This is my submission for the "**A basic parser and a formatter for F# language in Kotlin**" task for Jetbrains Internship.
 
 
 # Setup
